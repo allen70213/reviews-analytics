@@ -15,8 +15,24 @@ for d in data:
 
 print('平均留言長度', sum_len / len(data))
 
+
 new = []
 for d in data:
     if len(d) < 100:
         new.append(d)
 print('一共有', len(new), '筆留言長度小於100')
+
+good = []
+for d in data:
+    if 'good' in d:
+        good.append(d)
+print('一共有', len(good), '筆資料提到good')
+
+# list comprehension
+# output =[運算 for 變數 in 清單 if 篩選條件]
+good = [d for d in data if 'good' in d]
+print('一共有', len(good), '筆資料提到good')
+
+# 'bad' in d 判斷 True / False
+bad = ['bad' in d for d in data]
+print(bad)
